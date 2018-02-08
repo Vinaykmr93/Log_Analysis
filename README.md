@@ -49,7 +49,7 @@ psql -d news
 + **Create views** - [Views](View.md)
 
 1. You should already have vagrant up and be connected to it. 
-1. If you aren't already, cd into the correct project directory: ``` cd /vagrant/log_analysis ```
+1. If you aren't already, cd into the correct project directory: ``` cd /vagrant/Log_Analysis ```
 1. Run ``` python3 LogAnalysis.py ```
 
 Generating this information will take several seconds, but will now start loading. 
