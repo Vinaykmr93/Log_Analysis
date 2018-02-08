@@ -55,3 +55,10 @@ psql -d news
 Generating this information will take several seconds, but will now start loading. 
 
 + [Project Output](Output.txt)
+
+### Contributors
+Udacity
+
+### License
+
+Licensed under [MIT license](LICENSE)
