@@ -1,0 +1,19 @@
+Most popular article of all time:
+
+    candidate-is-jerk - 338647 views
+    bears-love-berries - 253801 views
+    bad-things-gone - 170098 views
+
+**********************************************************************
+Most popular authors:
+
+    1 - Ursula La Multa - 507594 views
+    2 - Rudolf von Treppenwitz - 423457 views
+    3 - Anonymous Contributor - 170098 views
+    4 - Markoff Chaney - 84557 views
+
+**********************************************************************
+Days with more than 1% error:
+
+  2016-07-17 - 2.2626862468 views
+
