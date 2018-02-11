@@ -1,3 +1,4 @@
+#! / usr/bin/env python3
 import psycopg2
 
 
@@ -20,7 +21,7 @@ def main():
     c.execute(popular_articles)
     print("\n")
     print("Most popular article of all time:\n")
-    for(article_title, total_reads) in c.fetchall():
+    for (article_title, total_reads) in c.fetchall():
         print("    {} - {} views".format(article_title, total_reads))
     print("\n")
     print("*"*70)
