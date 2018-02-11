@@ -1,15 +1,16 @@
 # Views
 
 ```sql
-create view article_det AS 
-select substring(path,position('e/' in path)+2) as article_title, status, time 
-from log;
+create view article_path AS 
+select author, title, slug, concat ('/article/',slug) as article_name, lead, body, time, id 
+from articles;
 ```
 
 ```sql
-create view article_details AS 
-select articles.author as article_id, article_det.article_title, article_det.status, article_det.time 
-from articles, article_det where articles.slug = article_det.article_title;
+create view article_info AS
+select article_path.author as article_id, article_path.slug as article_title, log.status, log.time 
+from log, article_path 
+where article_path.article_name = log.path;
 ```
 
 ```sql
