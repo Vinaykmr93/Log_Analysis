@@ -13,7 +13,7 @@ def main():
     # First Query
 
     popular_articles = """
-    select article_title, count(*) as total_reads from article_details
+    select article_title, count(*) as total_reads from article_info
     group by article_title order by total_reads desc limit 3;
     """
 
@@ -29,8 +29,8 @@ def main():
 
     popular_authors = """
     select article_id, name as author_name, count(*) as author_reads
-    from article_details, authors
-    where article_details.article_id = authors.id
+    from article_info, authors
+    where article_info.article_id = authors.id
     group by article_id, author_name order by author_reads desc;
     """
     c.execute(popular_authors)
