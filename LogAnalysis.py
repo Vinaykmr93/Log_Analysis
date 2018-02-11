@@ -5,13 +5,18 @@ import psycopg2
 DBNAME = 'news'
 
 
-def main():
-    # Connect to news Database
-    db = psycopg2.connect(database=DBNAME)
+def connect(database_name=DBNAME):
+    try:
+        db = psycopg2.connect(database=DBNAME)
+        c = db.cursor()
+        return db, c
+    except:
+        print("Connection to Database failed")
 
-    c = db.cursor()  # Open a cursor to perform database operations
 
-    # First Query
+# First Query
+def first_query():
+    db, c = connect()
 
     popular_articles = """
     select article_title, count(*) as total_reads from article_info
@@ -25,9 +30,13 @@ def main():
         print("    {} - {} views".format(article_title, total_reads))
     print("\n")
     print("*"*70)
+    c.close()
+    db.close()
 
-    # Second Query
 
+# Second Query
+def second_query():
+    db, c = connect()
     popular_authors = """
     select article_id, name as author_name, count(*) as author_reads
     from article_info, authors
@@ -41,8 +50,13 @@ def main():
               author_reads))
     print("\n")
     print("*"*70)
+    c.close()
+    db.close()
 
-    # Third Question
+
+# Third Question
+def third_query():
+    db, c = connect()
     error_calculation = """
     select date, error_percentage from log_calc where error_percentage > 1;
     """
@@ -56,6 +70,6 @@ def main():
     c.close()  # Close cursor
     db.close()  # Close Database
 
-
-if __name__ == "__main__":
-    main()
+first_query()
+second_query()
+third_query()
